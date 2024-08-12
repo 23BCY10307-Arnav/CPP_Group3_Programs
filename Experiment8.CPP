@@ -2,6 +2,18 @@
 // • Find the smallest of the element in the Vector. 
 // • Search for an element in the Vector. 
 // • Find the average of the element in the array. 
+
+#include <iostream>
+using namespace std;
+
+template <typename T>
+class Vector {
+private:
+    T elements[100];
+    int size;
+
+public:
+
  int searchElement(T element) {
         for (int i = 0; i < size; i++) {
             if (elements[i] == element) {
@@ -10,6 +22,22 @@
         }
         return -1; // Element not found
     }
+
+  T averageElement() {
+        if (size == 0) {
+            cout << "Vector is empty." << endl;
+            return T();
+        }
+
+        T sum = 0;
+        for (int i = 0; i < size; i++) {
+            sum += elements[i];
+        }
+        return sum / size;
+    }
+};
+
+
 int main() {
     Vector<int> vec;
     int n, element;

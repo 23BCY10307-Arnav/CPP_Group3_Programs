@@ -19,6 +19,18 @@ void swapBooks(Book &a, Book &b) {
     a = b;
     b = temp;
 }
+
+void sortBooks(Book books[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (strcmp(books[i].authorName, books[j].authorName) > 0) {
+                swapBooks(books[i], books[j]);
+            }
+        }
+    }
+}
+
+
 int main() {
     int n;
     cout << "Enter the number of books: ";

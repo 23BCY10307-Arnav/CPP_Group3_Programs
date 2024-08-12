@@ -42,3 +42,23 @@ public:
         }
         return *this;
     }
+
+int main() {
+    int d, m, y, daysToAdd;
+    cout << "Enter date (day month year): ";
+    cin >> d >> m >> y;
+    Date date(d, m, y);
+
+    ++date;  // Increment by one day
+    date.display();
+
+    cout << "Enter number of days to add: ";
+    cin >> daysToAdd;
+    Date futureDate = date + daysToAdd;
+    futureDate.display();
+
+    int daysElapsed = date;  // Days elapsed in the current year
+    cout << "Days elapsed in the current year: " << daysElapsed << endl;
+
+    return 0;
+}

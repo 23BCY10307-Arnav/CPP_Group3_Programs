@@ -38,6 +38,7 @@ public:
 };
 
 
+
 int main() {
     Vector<int> vec;
     int n, element;

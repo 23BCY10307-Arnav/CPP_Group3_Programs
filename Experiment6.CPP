@@ -43,6 +43,21 @@ public:
         return *this;
     }
 
+  // Overload the '+' operator to add a number of days
+    Date operator+(int days) const {
+        Date newDate = *this;
+        newDate.day += days;
+        while (newDate.day > 30) {  // Simplified assumption
+            newDate.day -= 30;
+            newDate.month++;
+            if (newDate.month > 12) {
+                newDate.month = 1;
+                newDate.year++;
+            }
+        }
+        return newDate;
+    }
+
 int main() {
     int d, m, y, daysToAdd;
     cout << "Enter date (day month year): ";

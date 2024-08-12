@@ -29,3 +29,16 @@ public:
         if (month != other.month) return month < other.month;
         return day < other.day;
     }
+// Overload the prefix '++' operator to increment the date by one day
+    Date& operator++() {
+        day++;
+        if (day > 30) {  // Simplified assumption: each month has 30 days
+            day = 1;
+            month++;
+            if (month > 12) {
+                month = 1;
+                year++;
+            }
+        }
+        return *this;
+    }

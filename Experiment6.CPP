@@ -7,3 +7,25 @@
 // elapsed in the current year of the date to the variable days. Note that this is a case of conversion 
 // from derived type to basic type.  
 
+#include <iostream>
+using namespace std;
+
+class Date {
+private:
+    int day, month, year;
+
+public:
+    // Constructor
+    Date(int d, int m, int y) : day(d), month(m), year(y) {}
+
+    // Display the date
+    void display() const {
+        cout << day << "/" << month << "/" << year << endl;
+    }
+
+    // Overload the '<' operator for comparison
+    bool operator<(const Date& other) const {
+        if (year != other.year) return year < other.year;
+        if (month != other.month) return month < other.month;
+        return day < other.day;
+    }

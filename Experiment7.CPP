@@ -14,3 +14,8 @@ struct Book {
     char publisher[50];
     int year;
 };
+void swapBooks(Book &a, Book &b) {
+    Book temp = a;
+    a = b;
+    b = temp;
+}
